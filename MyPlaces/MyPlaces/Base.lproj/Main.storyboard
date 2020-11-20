@@ -10,7 +10,7 @@
         <!--Root View Controller-->
         <scene sceneID="5Kc-eF-YJR">
             <objects>
-                <tableViewController id="C7P-i5-8yq" sceneMemberID="viewController">
+                <tableViewController id="C7P-i5-8yq" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gyr-mT-3tr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
