@@ -28,14 +28,22 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
+        guard let placeCell = cell as? PlaceTVC else {
+            return cell
+        }
         let restorantName = restaurantNames[indexPath.row]
-        cell.textLabel?.text = restorantName
-        cell.imageView?.image = UIImage(named: "Restaurants/\(restorantName).jpg")
+        placeCell.placeLabel.text = restorantName
+        placeCell.imageOfPlace.image = UIImage(named: "Restaurants/\(restorantName).jpg")
+        placeCell.imageOfPlace.layer.cornerRadius =  placeCell.imageOfPlace.frame.size.height / 2
+        placeCell.imageOfPlace.clipsToBounds = true
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 
     // MARK: - Navigation

@@ -14,6 +14,7 @@
 		1D6A5BC5256837790006BC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A5BC4256837790006BC1D /* Assets.xcassets */; };
 		1D6A5BC8256837790006BC1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A5BC6256837790006BC1D /* LaunchScreen.storyboard */; };
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
+		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1D6A5BC7256837790006BC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6A5BC9256837790006BC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1D6A5BBD256837730006BC1D /* SceneDelegate.swift */,
 				1D6A5BC1256837730006BC1D /* Main.storyboard */,
 				1D6A5BD1256838140006BC1D /* MainViewController.swift */,
+				1D94203F2569297100F3FDF6 /* PlaceTVC.swift */,
 				1D6A5BC4256837790006BC1D /* Assets.xcassets */,
 				1D6A5BC6256837790006BC1D /* LaunchScreen.storyboard */,
 				1D6A5BC9256837790006BC1D /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */,
 				1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */,
 				1D6A5BBC256837730006BC1D /* AppDelegate.swift in Sources */,
 				1D6A5BBE256837730006BC1D /* SceneDelegate.swift in Sources */,
