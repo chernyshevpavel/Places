@@ -15,6 +15,9 @@
 		1D6A5BC8256837790006BC1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A5BC6256837790006BC1D /* LaunchScreen.storyboard */; };
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
 		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
+		1D942044256938D700F3FDF6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D942043256938D600F3FDF6 /* Place.swift */; };
+		1DFC9D2C25699418000FA413 /* Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2B25699418000FA413 /* Photo.png */; };
+		1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		1D6A5BC9256837790006BC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
+		1D942043256938D600F3FDF6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1DFC9D2B25699418000FA413 /* Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Photo.png; path = "../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/Photo/Photo.png"; sourceTree = "<group>"; };
+		1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +66,28 @@
 		1D6A5BBA256837730006BC1D /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				1D942046256938E000F3FDF6 /* Models */,
 				1D0459F22568711A00A3E6BD /* Restaurants */,
 				1D6A5BBB256837730006BC1D /* AppDelegate.swift */,
 				1D6A5BBD256837730006BC1D /* SceneDelegate.swift */,
 				1D6A5BC1256837730006BC1D /* Main.storyboard */,
+				1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */,
 				1D6A5BD1256838140006BC1D /* MainViewController.swift */,
 				1D94203F2569297100F3FDF6 /* PlaceTVC.swift */,
 				1D6A5BC4256837790006BC1D /* Assets.xcassets */,
 				1D6A5BC6256837790006BC1D /* LaunchScreen.storyboard */,
 				1D6A5BC9256837790006BC1D /* Info.plist */,
+				1DFC9D2B25699418000FA413 /* Photo.png */,
 			);
 			path = MyPlaces;
+			sourceTree = "<group>";
+		};
+		1D942046256938E000F3FDF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D942043256938D600F3FDF6 /* Place.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +151,7 @@
 				1D6A5BC5256837790006BC1D /* Assets.xcassets in Resources */,
 				1D6A5BC3256837730006BC1D /* Main.storyboard in Resources */,
 				1D0459F32568711A00A3E6BD /* Restaurants in Resources */,
+				1DFC9D2C25699418000FA413 /* Photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +166,8 @@
 				1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */,
 				1D6A5BBC256837730006BC1D /* AppDelegate.swift in Sources */,
 				1D6A5BBE256837730006BC1D /* SceneDelegate.swift in Sources */,
+				1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */,
+				1D942044256938D700F3FDF6 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

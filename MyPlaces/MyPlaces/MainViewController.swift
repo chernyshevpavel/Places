@@ -9,12 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let restaurantNames = [
-        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-        "Speak Easy", "Morris Pub", "Вкусные истории",
-        "Классик", "Love&Life", "Шок", "Бочка"
-    ]
+    let places = Place.getPlaces()
     
     
     override func viewDidLoad() {
@@ -26,7 +21,7 @@ class MainViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return places.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,9 +29,11 @@ class MainViewController: UITableViewController {
         guard let placeCell = cell as? PlaceTVC else {
             return cell
         }
-        let restorantName = restaurantNames[indexPath.row]
-        placeCell.placeLabel.text = restorantName
-        placeCell.imageOfPlace.image = UIImage(named: "Restaurants/\(restorantName).jpg")
+        let place = places[indexPath.row]
+        placeCell.placeLabel.text = place.name
+        placeCell.locationLabel.text = place.location
+        placeCell.typeLabel.text = place.type
+        placeCell.imageOfPlace.image = UIImage(named: place.image)
         placeCell.imageOfPlace.layer.cornerRadius =  placeCell.imageOfPlace.frame.size.height / 2
         placeCell.imageOfPlace.clipsToBounds = true
         return cell
@@ -51,4 +48,7 @@ class MainViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+    
+    @IBAction func cancel(_ segue: UIStoryboardSegue, sender: Any?) {}
+
 }
