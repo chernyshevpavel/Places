@@ -16,6 +16,10 @@
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
 		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
 		1D942044256938D700F3FDF6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D942043256938D600F3FDF6 /* Place.swift */; };
+		1DEC6FC3256AE4D600136CB9 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC1256AE4D600136CB9 /* camera@2x.png */; };
+		1DEC6FC4256AE4D600136CB9 /* camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC2256AE4D600136CB9 /* camera@3x.png */; };
+		1DEC6FC8256B002E00136CB9 /* imagePlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */; };
+		1DEC6FC9256B002E00136CB9 /* imagePlaceholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */; };
 		1DFC9D2C25699418000FA413 /* Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2B25699418000FA413 /* Photo.png */; };
 		1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,10 @@
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
 		1D942043256938D600F3FDF6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1DEC6FC1256AE4D600136CB9 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@2x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/MyPlaces 3/MyPlaces/Assets.xcassets/ActionSheet Icons/camera.imageset/camera@2x.png"; sourceTree = "<group>"; };
+		1DEC6FC2256AE4D600136CB9 /* camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@3x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/MyPlaces 3/MyPlaces/Assets.xcassets/ActionSheet Icons/camera.imageset/camera@3x.png"; sourceTree = "<group>"; };
+		1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imagePlaceholder@2x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/imagePlaceholder/imagePlaceholder@2x.png"; sourceTree = "<group>"; };
+		1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imagePlaceholder@3x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/imagePlaceholder/imagePlaceholder@3x.png"; sourceTree = "<group>"; };
 		1DFC9D2B25699418000FA413 /* Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Photo.png; path = "../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/Photo/Photo.png"; sourceTree = "<group>"; };
 		1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +74,7 @@
 		1D6A5BBA256837730006BC1D /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				1DEC6FC0256AE49200136CB9 /* MyAssets */,
 				1D942046256938E000F3FDF6 /* Models */,
 				1D0459F22568711A00A3E6BD /* Restaurants */,
 				1D6A5BBB256837730006BC1D /* AppDelegate.swift */,
@@ -88,6 +97,17 @@
 				1D942043256938D600F3FDF6 /* Place.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1DEC6FC0256AE49200136CB9 /* MyAssets */ = {
+			isa = PBXGroup;
+			children = (
+				1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */,
+				1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */,
+				1DEC6FC1256AE4D600136CB9 /* camera@2x.png */,
+				1DEC6FC2256AE4D600136CB9 /* camera@3x.png */,
+			);
+			path = MyAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +169,13 @@
 			files = (
 				1D6A5BC8256837790006BC1D /* LaunchScreen.storyboard in Resources */,
 				1D6A5BC5256837790006BC1D /* Assets.xcassets in Resources */,
+				1DEC6FC8256B002E00136CB9 /* imagePlaceholder@2x.png in Resources */,
+				1DEC6FC4256AE4D600136CB9 /* camera@3x.png in Resources */,
+				1DEC6FC9256B002E00136CB9 /* imagePlaceholder@3x.png in Resources */,
 				1D6A5BC3256837730006BC1D /* Main.storyboard in Resources */,
 				1D0459F32568711A00A3E6BD /* Restaurants in Resources */,
 				1DFC9D2C25699418000FA413 /* Photo.png in Resources */,
+				1DEC6FC3256AE4D600136CB9 /* camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
