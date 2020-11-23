@@ -60,7 +60,7 @@ class NewPlaceTVC: UITableViewController {
     
     func buildPlace() -> Place {
         if !isImageChanged {
-            imageOfPlace.image = UIImage(named: "MyAssets/imagePlaceholder@2x.png")
+            imageOfPlace.image = UIImage(named: "Restaurants/imagePlaceholder.png")
         }
         return Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, image: imageOfPlace.image, imageName: nil)
     }

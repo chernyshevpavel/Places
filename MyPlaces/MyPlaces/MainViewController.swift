@@ -37,7 +37,7 @@ class MainViewController: UITableViewController {
             placeCell.imageOfPlace.image = place.image
         } else if place.imageName != nil {
             placeCell.imageOfPlace.image = UIImage(named: place.imageName!)
-        }
+        } 
        
         placeCell.imageOfPlace.layer.cornerRadius =  placeCell.imageOfPlace.frame.size.height / 2
         placeCell.imageOfPlace.clipsToBounds = true
@@ -63,3 +63,4 @@ class MainViewController: UITableViewController {
     }
 
 }
+

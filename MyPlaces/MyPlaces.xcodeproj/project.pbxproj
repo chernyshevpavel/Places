@@ -16,15 +16,13 @@
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
 		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
 		1D942044256938D700F3FDF6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D942043256938D600F3FDF6 /* Place.swift */; };
-		1DEC6FC3256AE4D600136CB9 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC1256AE4D600136CB9 /* camera@2x.png */; };
-		1DEC6FC4256AE4D600136CB9 /* camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC2256AE4D600136CB9 /* camera@3x.png */; };
-		1DEC6FC8256B002E00136CB9 /* imagePlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */; };
-		1DEC6FC9256B002E00136CB9 /* imagePlaceholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */; };
 		1DFC9D2C25699418000FA413 /* Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2B25699418000FA413 /* Photo.png */; };
 		1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */; };
+		9B162842061D731CD40BC4D0 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0AA49745551BA02BAE8DEA /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		1D0459F22568711A00A3E6BD /* Restaurants */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Restaurants; path = "../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/Restaurants"; sourceTree = "<group>"; };
 		1D6A5BB8256837730006BC1D /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6A5BBB256837730006BC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,12 +34,10 @@
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
 		1D942043256938D600F3FDF6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		1DEC6FC1256AE4D600136CB9 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@2x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/MyPlaces 3/MyPlaces/Assets.xcassets/ActionSheet Icons/camera.imageset/camera@2x.png"; sourceTree = "<group>"; };
-		1DEC6FC2256AE4D600136CB9 /* camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@3x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/MyPlaces 3/MyPlaces/Assets.xcassets/ActionSheet Icons/camera.imageset/camera@3x.png"; sourceTree = "<group>"; };
-		1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imagePlaceholder@2x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/imagePlaceholder/imagePlaceholder@2x.png"; sourceTree = "<group>"; };
-		1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imagePlaceholder@3x.png"; path = "../../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/imagePlaceholder/imagePlaceholder@3x.png"; sourceTree = "<group>"; };
 		1DFC9D2B25699418000FA413 /* Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Photo.png; path = "../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/Photo/Photo.png"; sourceTree = "<group>"; };
 		1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTVC.swift; sourceTree = "<group>"; };
+		5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD55A09717C84BA75D34A0F /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B162842061D731CD40BC4D0 /* Pods_MyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0BF733FF6E582EF0454BF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DD55A09717C84BA75D34A0F /* Pods-MyPlaces.debug.xcconfig */,
+				0B0AA49745551BA02BAE8DEA /* Pods-MyPlaces.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1D6A5BAF256837720006BC1D = {
 			isa = PBXGroup;
 			children = (
 				1D6A5BBA256837730006BC1D /* MyPlaces */,
 				1D6A5BB9256837730006BC1D /* Products */,
+				0D0BF733FF6E582EF0454BF1 /* Pods */,
+				FA1E8621429CA2539C5FEE51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,7 +83,6 @@
 		1D6A5BBA256837730006BC1D /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				1DEC6FC0256AE49200136CB9 /* MyAssets */,
 				1D942046256938E000F3FDF6 /* Models */,
 				1D0459F22568711A00A3E6BD /* Restaurants */,
 				1D6A5BBB256837730006BC1D /* AppDelegate.swift */,
@@ -99,15 +107,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1DEC6FC0256AE49200136CB9 /* MyAssets */ = {
+		FA1E8621429CA2539C5FEE51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DEC6FC6256B002E00136CB9 /* imagePlaceholder@2x.png */,
-				1DEC6FC7256B002E00136CB9 /* imagePlaceholder@3x.png */,
-				1DEC6FC1256AE4D600136CB9 /* camera@2x.png */,
-				1DEC6FC2256AE4D600136CB9 /* camera@3x.png */,
+				5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */,
 			);
-			path = MyAssets;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6A5BCC256837790006BC1D /* Build configuration list for PBXNativeTarget "MyPlaces" */;
 			buildPhases = (
+				3CB503E20B48FE2666AB4865 /* [CP] Check Pods Manifest.lock */,
 				1D6A5BB4256837720006BC1D /* Sources */,
 				1D6A5BB5256837720006BC1D /* Frameworks */,
 				1D6A5BB6256837720006BC1D /* Resources */,
+				A6F8039A85F8AC310FBE3EA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,17 +176,55 @@
 			files = (
 				1D6A5BC8256837790006BC1D /* LaunchScreen.storyboard in Resources */,
 				1D6A5BC5256837790006BC1D /* Assets.xcassets in Resources */,
-				1DEC6FC8256B002E00136CB9 /* imagePlaceholder@2x.png in Resources */,
-				1DEC6FC4256AE4D600136CB9 /* camera@3x.png in Resources */,
-				1DEC6FC9256B002E00136CB9 /* imagePlaceholder@3x.png in Resources */,
 				1D6A5BC3256837730006BC1D /* Main.storyboard in Resources */,
 				1D0459F32568711A00A3E6BD /* Restaurants in Resources */,
 				1DFC9D2C25699418000FA413 /* Photo.png in Resources */,
-				1DEC6FC3256AE4D600136CB9 /* camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CB503E20B48FE2666AB4865 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyPlaces-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F8039A85F8AC310FBE3EA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlaces/Pods-MyPlaces-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlaces/Pods-MyPlaces-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPlaces/Pods-MyPlaces-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D6A5BB4256837720006BC1D /* Sources */ = {
@@ -335,6 +380,7 @@
 		};
 		1D6A5BCD256837790006BC1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD55A09717C84BA75D34A0F /* Pods-MyPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,6 +400,7 @@
 		};
 		1D6A5BCE256837790006BC1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0AA49745551BA02BAE8DEA /* Pods-MyPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
