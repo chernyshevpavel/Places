@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class NewPlaceTVC: UITableViewController {
 
     @IBOutlet weak var imageOfPlace: UIImageView!
@@ -58,11 +59,18 @@ class NewPlaceTVC: UITableViewController {
         }
     }
     
-    func buildPlace() -> Place {
-        if !isImageChanged {
-            imageOfPlace.image = UIImage(named: "Restaurants/imagePlaceholder.png")
+    func savePlace() {
+        var imageData: Data?
+        if isImageChanged {
+            imageData = imageOfPlace.image?.pngData()
+        } else {
+            imageData = UIImage(named: "imagePlaceholder.png")?.pngData()
         }
-        return Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, image: imageOfPlace.image, imageName: nil)
+        
+        let place = Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, imageData: imageData)
+        
+        let storageManager = StorageManager()
+        storageManager.savePlace(place)
     }
     
     @IBAction func cancleTaped(_ sender: Any) {
