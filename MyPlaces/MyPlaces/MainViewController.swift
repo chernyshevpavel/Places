@@ -40,6 +40,17 @@ class MainViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .destructive, title: "Delete") {  [weak self] (contextualAction, view, boolValue)  in
+            let storageManager = StorageManager()
+            guard let place = self?.places[indexPath.row] else { return }
+            storageManager.deletePlace(place)
+            self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+        return swipeActions
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
