@@ -57,6 +57,17 @@ class MainViewController: UITableViewController {
 
     // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "placeDetail" {
+            guard let newPlaceTVC = segue.destination as? NewPlaceTVC,
+                  let indexPath = tableView.indexPathForSelectedRow else {
+                return
+            }
+            let place = places[indexPath.row]
+            newPlaceTVC.currentPlace = place
+        }
+    }
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceTVC = segue.source as? NewPlaceTVC else {
             return

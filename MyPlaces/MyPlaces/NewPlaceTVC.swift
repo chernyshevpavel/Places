@@ -17,6 +17,7 @@ class NewPlaceTVC: UITableViewController {
     
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     
+    var currentPlace: Place?
     var isImageChanged = false
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class NewPlaceTVC: UITableViewController {
         tableView.tableFooterView = UIView()
         saveBtn.isEnabled = false
         nameOfPlace.addTarget(self, action: #selector(nameChanged), for: .editingChanged)
+        setupEditScreen()
     }
 
     // MARK: Tavle view delegate
@@ -70,7 +72,43 @@ class NewPlaceTVC: UITableViewController {
         let place = Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, imageData: imageData)
         
         let storageManager = StorageManager()
-        storageManager.savePlace(place)
+        
+        if currentPlace != nil {
+            try! realm.write {
+                currentPlace?.name = place.name
+                currentPlace?.location = place.location
+                currentPlace?.type = place.type
+                currentPlace?.imageData = place.imageData
+            }
+        } else {
+            storageManager.savePlace(place)
+        }
+    }
+    
+    private func setupEditScreen() {
+        if currentPlace != nil {
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {
+                return
+            }
+            setupEditNavigationBar()
+            imageOfPlace.image = image
+            isImageChanged = true
+            imageOfPlace.contentMode = .scaleAspectFit
+            imageOfPlace.backgroundColor = .black
+            nameOfPlace.text = currentPlace?.name
+            locationOfPlace.text = currentPlace?.location
+            typeOfPlace.text = currentPlace?.type
+        }
+    }
+    
+    private func setupEditNavigationBar() {
+        navigationItem.leftBarButtonItem = nil
+        title = currentPlace?.name
+        saveBtn.isEnabled = true
+        guard let topItem = navigationController?.navigationBar.topItem else {
+            return
+        }
+        topItem.backBarButtonItem = UIBarButtonItem(title: "", image: nil, primaryAction: nil, menu: nil)
     }
     
     @IBAction func cancleTaped(_ sender: Any) {
