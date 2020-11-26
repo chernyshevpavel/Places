@@ -2,19 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "locale" : "sharewood.biz",
       "scale" : "1x"
     },
     {
-      "filename" : "photo@2x.png",
+      "filename" : "ZA@2x.png",
       "idiom" : "universal",
-      "locale" : "sharewood.biz",
       "scale" : "2x"
     },
     {
-      "filename" : "photo@3x.png",
+      "filename" : "ZA@3x.png",
       "idiom" : "universal",
-      "locale" : "sharewood.biz",
       "scale" : "3x"
     }
   ],

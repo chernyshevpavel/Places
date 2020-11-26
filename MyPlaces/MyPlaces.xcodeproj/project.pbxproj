@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D06A33B256C42460075F300 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06A33A256C42460075F300 /* StorageManager.swift */; };
-		1D06A346256C46880075F300 /* imagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D06A345256C46880075F300 /* imagePlaceholder.png */; };
 		1D6A5BBC256837730006BC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BBB256837730006BC1D /* AppDelegate.swift */; };
 		1D6A5BBE256837730006BC1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BBD256837730006BC1D /* SceneDelegate.swift */; };
 		1D6A5BC3256837730006BC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A5BC1256837730006BC1D /* Main.storyboard */; };
@@ -17,7 +16,6 @@
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
 		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
 		1D942044256938D700F3FDF6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D942043256938D600F3FDF6 /* Place.swift */; };
-		1DFC9D2C25699418000FA413 /* Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2B25699418000FA413 /* Photo.png */; };
 		1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */; };
 		9B162842061D731CD40BC4D0 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */; };
 /* End PBXBuildFile section */
@@ -25,7 +23,6 @@
 /* Begin PBXFileReference section */
 		0B0AA49745551BA02BAE8DEA /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		1D06A33A256C42460075F300 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		1D06A345256C46880075F300 /* imagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagePlaceholder.png; sourceTree = "<group>"; };
 		1D6A5BB8256837730006BC1D /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6A5BBB256837730006BC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6A5BBD256837730006BC1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +33,6 @@
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
 		1D942043256938D600F3FDF6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		1DFC9D2B25699418000FA413 /* Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Photo.png; path = "../../../../../../../OneDrive/Данные/swiftbook/[sharewood.biz] 5. Курс Приложения на основе UITableView/Конечный проект/Photo/Photo.png"; sourceTree = "<group>"; };
 		1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTVC.swift; sourceTree = "<group>"; };
 		5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD55A09717C84BA75D34A0F /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,8 +91,6 @@
 				1D6A5BC4256837790006BC1D /* Assets.xcassets */,
 				1D6A5BC6256837790006BC1D /* LaunchScreen.storyboard */,
 				1D6A5BC9256837790006BC1D /* Info.plist */,
-				1DFC9D2B25699418000FA413 /* Photo.png */,
-				1D06A345256C46880075F300 /* imagePlaceholder.png */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -178,9 +172,7 @@
 			files = (
 				1D6A5BC8256837790006BC1D /* LaunchScreen.storyboard in Resources */,
 				1D6A5BC5256837790006BC1D /* Assets.xcassets in Resources */,
-				1D06A346256C46880075F300 /* imagePlaceholder.png in Resources */,
 				1D6A5BC3256837730006BC1D /* Main.storyboard in Resources */,
-				1DFC9D2C25699418000FA413 /* Photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
