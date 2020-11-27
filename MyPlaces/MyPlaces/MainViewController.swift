@@ -11,8 +11,12 @@ import RealmSwift
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var orderBtn: UIBarButtonItem!
+
     
     var places: Results<Place>!
+    private var isAscOrder = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +82,27 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.reloadData()
     }
 
+    @IBAction func changeOrder(_ sender: UIBarButtonItem) {
+        isAscOrder.toggle()
+        if isAscOrder {
+            orderBtn.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            orderBtn.image = #imageLiteral(resourceName: "ZA")
+        }
+        sort()
+    }
+    
+    @IBAction func changeSort(_ sender: Any) {
+        sort()
+    }
+    
+    private func sort() {
+        if sortSegmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date", ascending: isAscOrder)
+        } else if sortSegmentedControl.selectedSegmentIndex == 1 {
+            places = places.sorted(byKeyPath: "name", ascending: isAscOrder)
+        }
+        tableView.reloadData()
+    }
 }
 

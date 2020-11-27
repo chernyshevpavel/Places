@@ -225,6 +225,9 @@
                                     <segment title="Date"/>
                                     <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSort:" destination="DcN-uU-aKM" eventType="valueChanged" id="cXb-YE-Tc2"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iLh-Ij-CHU">
                                 <rect key="frame" x="0.0" y="120" width="414" height="776"/>
@@ -315,7 +318,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="EJ2-0R-y2W">
-                        <barButtonItem key="leftBarButtonItem" image="AZ" id="0iy-hl-b4t"/>
+                        <barButtonItem key="leftBarButtonItem" image="AZ" id="0iy-hl-b4t">
+                            <connections>
+                                <action selector="changeOrder:" destination="DcN-uU-aKM" id="6Sv-78-F6C"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lsf-rq-bdM">
                             <connections>
                                 <segue destination="Hxl-bU-gQg" kind="presentation" id="dGM-HS-FzX"/>
@@ -323,6 +330,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="orderBtn" destination="0iy-hl-b4t" id="z0Y-Ch-F5O"/>
+                        <outlet property="sortSegmentedControl" destination="qHT-VM-G1G" id="sZT-nW-0HN"/>
                         <outlet property="tableView" destination="iLh-Ij-CHU" id="U9r-tu-9B4"/>
                     </connections>
                 </viewController>
