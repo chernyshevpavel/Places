@@ -10,13 +10,12 @@ import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private var places: Results<Place>!
+    private var isAscOrder = true
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     @IBOutlet weak var orderBtn: UIBarButtonItem!
-
-    
-    var places: Results<Place>!
-    private var isAscOrder = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

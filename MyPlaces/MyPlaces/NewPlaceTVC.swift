@@ -9,6 +9,9 @@ import UIKit
 
 
 class NewPlaceTVC: UITableViewController {
+    
+    var currentPlace: Place?
+    private var isImageChanged = false
 
     @IBOutlet weak var imageOfPlace: UIImageView!
     @IBOutlet weak var nameOfPlace: UITextField!
@@ -16,9 +19,6 @@ class NewPlaceTVC: UITableViewController {
     @IBOutlet weak var typeOfPlace: UITextField!
     
     @IBOutlet weak var saveBtn: UIBarButtonItem!
-    
-    var currentPlace: Place?
-    var isImageChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
