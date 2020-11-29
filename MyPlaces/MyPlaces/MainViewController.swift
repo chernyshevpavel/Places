@@ -10,8 +10,16 @@ import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private let searchController = UISearchController(searchResultsController: nil)
     private var places: Results<Place>!
+    private var filtredPlaces: Results<Place>!
     private var isAscOrder = true
+    private var isSearchBarEmpty: Bool {
+        guard let text = searchController.searchBar.text else {
+            return false
+        }
+        return text.isEmpty
+    }
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
@@ -20,6 +28,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.places = realm.objects(Place.self)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
@@ -103,5 +115,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         tableView.reloadData()
     }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // MARK: To Do
+    }
+    
+    
 }
 
