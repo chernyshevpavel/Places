@@ -21,6 +21,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return text.isEmpty
     }
     
+    private var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     @IBOutlet weak var orderBtn: UIBarButtonItem!
@@ -31,13 +35,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
         definesPresentationContext = true
     }
 
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places.isEmpty ? 0 : places.count
+        return getPlacesCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let placeCell = cell as? PlaceTVC else {
             return cell
         }
-        let place = places[indexPath.row]
+        let place = getPlace(by: indexPath)
         placeCell.placeLabel.text = place.name
         placeCell.locationLabel.text = place.location
         placeCell.typeLabel.text = place.type
@@ -71,6 +76,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
+    
+    private func getPlacesCount() -> Int {
+        if (isFiltering) {
+            return filtredPlaces.isEmpty ? 0 : filtredPlaces.count
+        }
+        return places.isEmpty ? 0 : places.count
+    }
+    
+    private func getPlace(by indexPath: IndexPath) -> Place {
+        if (isFiltering) {
+            return filtredPlaces[indexPath.row]
+        }
+        return places[indexPath.row]
+    }
 
     // MARK: - Navigation
     
@@ -80,7 +99,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                   let indexPath = tableView.indexPathForSelectedRow else {
                 return
             }
-            let place = places[indexPath.row]
+            let place = getPlace(by: indexPath)
             newPlaceTVC.currentPlace = place
         }
     }
@@ -119,9 +138,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // MARK: To Do
+        guard let searchText = searchController.searchBar.text else { return }
+        filterContentForSearchText(searchText)
     }
     
-    
+    func filterContentForSearchText(_ searchText: String) {
+        filtredPlaces = places.filter(
+            "name CONTAINS[c] %s OR location CONTAINS[c] %s OR type CONTAINS[c] %s",
+            searchText, searchText, searchText)
+        tableView.reloadData()
+    }
 }
 
