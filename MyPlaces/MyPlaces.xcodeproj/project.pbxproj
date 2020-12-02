@@ -16,6 +16,7 @@
 		1D6A5BD2256838140006BC1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A5BD1256838140006BC1D /* MainViewController.swift */; };
 		1D9420402569297100F3FDF6 /* PlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94203F2569297100F3FDF6 /* PlaceTVC.swift */; };
 		1D942044256938D700F3FDF6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D942043256938D600F3FDF6 /* Place.swift */; };
+		1DACCE49257823EE00858AFD /* RaitingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DACCE48257823EE00858AFD /* RaitingControl.swift */; };
 		1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */; };
 		9B162842061D731CD40BC4D0 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		1D6A5BD1256838140006BC1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D94203F2569297100F3FDF6 /* PlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTVC.swift; sourceTree = "<group>"; };
 		1D942043256938D600F3FDF6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1DACCE48257823EE00858AFD /* RaitingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingControl.swift; sourceTree = "<group>"; };
 		1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTVC.swift; sourceTree = "<group>"; };
 		5A2397217E06CFC4E372AF48 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD55A09717C84BA75D34A0F /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				1D06A33A256C42460075F300 /* StorageManager.swift */,
 				1D6A5BBB256837730006BC1D /* AppDelegate.swift */,
 				1D6A5BBD256837730006BC1D /* SceneDelegate.swift */,
+				1DACCE48257823EE00858AFD /* RaitingControl.swift */,
 				1D6A5BC1256837730006BC1D /* Main.storyboard */,
 				1DFC9D2E25699F3F000FA413 /* NewPlaceTVC.swift */,
 				1D6A5BD1256838140006BC1D /* MainViewController.swift */,
@@ -231,6 +234,7 @@
 				1D06A33B256C42460075F300 /* StorageManager.swift in Sources */,
 				1D6A5BBE256837730006BC1D /* SceneDelegate.swift in Sources */,
 				1DFC9D2F25699F3F000FA413 /* NewPlaceTVC.swift in Sources */,
+				1DACCE49257823EE00858AFD /* RaitingControl.swift in Sources */,
 				1D942044256938D700F3FDF6 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
