@@ -22,7 +22,10 @@ class NewPlaceTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: tableView.frame.size.width,
+                                                         height: 1))
         saveBtn.isEnabled = false
         nameOfPlace.addTarget(self, action: #selector(nameChanged), for: .editingChanged)
         setupEditScreen()
