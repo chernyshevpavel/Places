@@ -45,7 +45,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return getPlacesCount()
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { 
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

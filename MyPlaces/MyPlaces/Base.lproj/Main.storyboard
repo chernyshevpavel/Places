@@ -190,6 +190,7 @@
                         <outlet property="imageOfPlace" destination="JXq-M0-2eA" id="H0p-IO-BRv"/>
                         <outlet property="locationOfPlace" destination="emQ-zK-9M6" id="Aq5-PC-Qkl"/>
                         <outlet property="nameOfPlace" destination="uak-kO-0jN" id="d5t-WO-cdx"/>
+                        <outlet property="ratingOfPlace" destination="QsI-cb-UTA" id="Hgd-ze-PhM"/>
                         <outlet property="saveBtn" destination="Kca-p8-qHN" id="NMw-U7-Dbp"/>
                         <outlet property="typeOfPlace" destination="SY6-iR-s4g" id="f55-YN-oAp"/>
                     </connections>

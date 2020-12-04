@@ -17,6 +17,7 @@ class NewPlaceTVC: UITableViewController {
     @IBOutlet weak var nameOfPlace: UITextField!
     @IBOutlet weak var locationOfPlace: UITextField!
     @IBOutlet weak var typeOfPlace: UITextField!
+    @IBOutlet weak var ratingOfPlace: RatingControl!
     
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     
@@ -72,7 +73,7 @@ class NewPlaceTVC: UITableViewController {
             imageData = UIImage(named: "imagePlaceholder.png")?.pngData()
         }
         
-        let place = Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, imageData: imageData)
+        let place = Place(name: nameOfPlace.text ?? "", location: locationOfPlace.text, type: typeOfPlace.text, imageData: imageData, rating: Double(ratingOfPlace.rating))
         
         let storageManager = StorageManager()
         
@@ -82,6 +83,7 @@ class NewPlaceTVC: UITableViewController {
                 currentPlace?.location = place.location
                 currentPlace?.type = place.type
                 currentPlace?.imageData = place.imageData
+                currentPlace?.rating = place.rating
             }
         } else {
             storageManager.savePlace(place)
@@ -101,6 +103,7 @@ class NewPlaceTVC: UITableViewController {
             nameOfPlace.text = currentPlace?.name
             locationOfPlace.text = currentPlace?.location
             typeOfPlace.text = currentPlace?.type
+            ratingOfPlace.rating = Int(currentPlace?.rating ?? 0)
         }
     }
     
