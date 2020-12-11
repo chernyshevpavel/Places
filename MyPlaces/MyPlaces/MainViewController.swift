@@ -58,11 +58,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         placeCell.placeLabel.text = place.name
         placeCell.locationLabel.text = place.location
         placeCell.typeLabel.text = place.type
+        placeCell.ratingControl.rating = Int(place.rating)
         if let imageData = place.imageData {
             placeCell.imageOfPlace.image = UIImage(data: imageData)
         }
-        placeCell.imageOfPlace.layer.cornerRadius =  placeCell.imageOfPlace.frame.size.height / 2
-        placeCell.imageOfPlace.clipsToBounds = true
         return cell
     }
     
