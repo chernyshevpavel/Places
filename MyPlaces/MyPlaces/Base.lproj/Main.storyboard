@@ -32,8 +32,23 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viB-XH-z9p">
+                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="q3n-we-RWK"/>
+                                                        <constraint firstAttribute="width" constant="50" id="vOE-ae-3RU"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map"/>
+                                                    <connections>
+                                                        <segue destination="VsT-xO-ZcA" kind="presentation" id="b8N-sk-8NT"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="viB-XH-z9p" firstAttribute="bottom" secondItem="Y3Z-ap-Toj" secondAttribute="bottomMargin" id="5kU-iF-Bm1"/>
+                                                <constraint firstItem="viB-XH-z9p" firstAttribute="trailing" secondItem="Y3Z-ap-Toj" secondAttribute="trailingMargin" id="p20-us-gbi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="85" id="Ato-Ml-tov">
@@ -149,7 +164,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QsI-cb-UTA" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
-                                                    <rect key="frame" x="55" y="48" width="304" height="44"/>
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="buttonCount">
                                                             <integer key="value" value="2"/>
@@ -199,6 +214,45 @@
                 <exit id="EuK-75-Mtw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="864" y="-38"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="sNR-wP-ZiG">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="VsT-xO-ZcA" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lai-TC-Zj9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-ok-jEG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-xz-KxH">
+                                <rect key="frame" x="334" y="84" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="B1u-F9-19h"/>
+                                    <constraint firstAttribute="height" constant="40" id="Jgf-rz-H19"/>
+                                </constraints>
+                                <state key="normal" image="camcel"/>
+                                <connections>
+                                    <action selector="closeMap:" destination="VsT-xO-ZcA" eventType="touchUpInside" id="Oan-66-M8x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6d4-5V-NTB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yI6-ok-jEG" secondAttribute="bottom" id="Gsu-V5-JX6"/>
+                            <constraint firstItem="LLP-xz-KxH" firstAttribute="top" secondItem="6d4-5V-NTB" secondAttribute="top" constant="40" id="Xyc-Da-MFg"/>
+                            <constraint firstItem="yI6-ok-jEG" firstAttribute="trailing" secondItem="6d4-5V-NTB" secondAttribute="trailing" id="Zod-wp-Mda"/>
+                            <constraint firstItem="yI6-ok-jEG" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" id="fhk-Rx-TDn"/>
+                            <constraint firstItem="6d4-5V-NTB" firstAttribute="trailing" secondItem="LLP-xz-KxH" secondAttribute="trailing" constant="40" id="gCl-lf-6se"/>
+                            <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="lai-TC-Zj9" secondAttribute="top" id="hdr-Bq-2Ts"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vj7-Qt-ct7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631.8840579710147" y="-22.767857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cL0-1l-Hs1">
@@ -393,6 +447,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo.png" width="390" height="392"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
