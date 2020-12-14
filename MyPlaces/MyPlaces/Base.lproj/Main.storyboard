@@ -40,7 +40,7 @@
                                                     </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
-                                                        <segue destination="VsT-xO-ZcA" kind="presentation" id="b8N-sk-8NT"/>
+                                                        <segue destination="VsT-xO-ZcA" kind="presentation" identifier="showMap" id="b8N-sk-8NT"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -249,6 +249,9 @@
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="lai-TC-Zj9" secondAttribute="top" id="hdr-Bq-2Ts"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="yI6-ok-jEG" id="ZDW-IO-Vco"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vj7-Qt-ct7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
