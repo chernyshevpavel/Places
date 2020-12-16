@@ -69,7 +69,10 @@ class NewPlaceTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showMap" else { return }
         guard let mapVC = segue.destination as? MapViewController else { return }
-        mapVC.place = self.currentPlace
+        mapVC.place.name = nameOfPlace.text ?? ""
+        mapVC.place.type = typeOfPlace.text
+        mapVC.place.location = locationOfPlace.text
+        mapVC.place.rating = Double(ratingOfPlace.rating)
     }
     
     func savePlace() {
