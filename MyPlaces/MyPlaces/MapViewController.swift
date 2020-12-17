@@ -7,22 +7,60 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
     let place = Place()
     let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        checkLocationServices()
         setupPlacemark()
     }
     
     @IBAction func closeMap(_ sender: Any) {
         dismiss(animated: true)
+    }
+    
+    private func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setUpLocationManager()
+            checkLocationAuthorization()
+        } else {
+            //MARK: show alert
+        }
+    }
+    
+    private func setUpLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization() {
+        switch locationManager.authorizationStatus {
+            case .authorizedWhenInUse:
+                map.showsUserLocation = true
+                break
+            case .denied:
+                //MARK: show alert
+                break
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .restricted:
+                //MARK: show alert
+                break
+            case .authorizedAlways:
+                break
+            @unknown default:
+                print("Availible new location status")
+                break
+        }
     }
     
     private func setupPlacemark() {
@@ -46,6 +84,12 @@ class MapViewController: UIViewController {
             self.map.showAnnotations([annotation], animated: true)
             self.map.selectAnnotation(annotation, animated: true)
         }
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
     }
 }
 
