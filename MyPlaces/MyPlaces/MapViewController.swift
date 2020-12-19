@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     let place = Place()
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
+    let regionInMeters = 5_000.00
     
     @IBOutlet weak var map: MKMapView!
     
@@ -28,12 +29,23 @@ class MapViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func centerViewInUserLocation() {
+        if let locationCoordinate = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: locationCoordinate,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            map.setRegion(region, animated: true)
+        }
+    }
+    
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             setUpLocationManager()
             checkLocationAuthorization()
         } else {
-            //MARK: show alert
+            showAlertAsync(title: "Location services are disabled",
+                           message: "To enable it go: Settings -> Privacy -> Location services and turn on",
+                           deadline: .now() + 1)
         }
     }
     
@@ -48,12 +60,13 @@ class MapViewController: UIViewController {
                 map.showsUserLocation = true
                 break
             case .denied:
-                //MARK: show alert
+                showAlertAsync(title: "Your Location is not awaileble",
+                               message: "To give permission go to: Settings -> My Places -> Location",
+                               deadline: .now() + 1)
                 break
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
             case .restricted:
-                //MARK: show alert
                 break
             case .authorizedAlways:
                 break
@@ -84,6 +97,18 @@ class MapViewController: UIViewController {
             self.map.showAnnotations([annotation], animated: true)
             self.map.selectAnnotation(annotation, animated: true)
         }
+    }
+    
+    private func showAlertAsync(title: String, message: String, deadline: DispatchTime) {
+        DispatchQueue.main.asyncAfter(deadline: deadline) { [weak self] in
+            self?.showAlert(title: title, message: message)
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alertCtrl = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertCtrl.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alertCtrl, animated: true)
     }
 }
 

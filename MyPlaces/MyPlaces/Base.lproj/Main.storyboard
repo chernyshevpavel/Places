@@ -237,16 +237,29 @@
                                     <action selector="closeMap:" destination="VsT-xO-ZcA" eventType="touchUpInside" id="Oan-66-M8x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ci-f1-4rh">
+                                <rect key="frame" x="324" y="806" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Drl-8U-zzV"/>
+                                    <constraint firstAttribute="height" constant="50" id="mkH-2y-spj"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="VsT-xO-ZcA" eventType="touchUpInside" id="jWU-rq-gId"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6d4-5V-NTB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yI6-ok-jEG" secondAttribute="bottom" id="Gsu-V5-JX6"/>
+                            <constraint firstItem="6ci-f1-4rh" firstAttribute="bottom" secondItem="yI6-ok-jEG" secondAttribute="bottom" constant="-40" id="Nsr-yH-1qw"/>
                             <constraint firstItem="LLP-xz-KxH" firstAttribute="top" secondItem="6d4-5V-NTB" secondAttribute="top" constant="40" id="Xyc-Da-MFg"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="trailing" secondItem="6d4-5V-NTB" secondAttribute="trailing" id="Zod-wp-Mda"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" id="fhk-Rx-TDn"/>
                             <constraint firstItem="6d4-5V-NTB" firstAttribute="trailing" secondItem="LLP-xz-KxH" secondAttribute="trailing" constant="40" id="gCl-lf-6se"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="lai-TC-Zj9" secondAttribute="top" id="hdr-Bq-2Ts"/>
+                            <constraint firstItem="6ci-f1-4rh" firstAttribute="trailing" secondItem="lai-TC-Zj9" secondAttribute="trailing" constant="-40" id="qM1-vA-rbT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -451,6 +464,7 @@
         <image name="AZ" width="25" height="24"/>
         <image name="Photo.png" width="390" height="392"/>
         <image name="camcel" width="128" height="128"/>
+        <image name="location" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
