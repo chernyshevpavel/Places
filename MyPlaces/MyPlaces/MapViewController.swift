@@ -15,27 +15,29 @@ class MapViewController: UIViewController {
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 5_000.00
+    var incomeSegueIdentifier = ""
     
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var mapPinImage: UIImageView!
+    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        setUpMapView()
         checkLocationServices()
-        setupPlacemark()
     }
     
     @IBAction func closeMap(_ sender: Any) {
         dismiss(animated: true)
     }
     
+    @IBAction func doneButtonPressed() {
+    }
+    
     @IBAction func centerViewInUserLocation() {
-        if let locationCoordinate = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: locationCoordinate,
-                                            latitudinalMeters: regionInMeters,
-                                            longitudinalMeters: regionInMeters)
-            map.setRegion(region, animated: true)
-        }
+        showUserLocation()
     }
     
     private func checkLocationServices() {
@@ -54,10 +56,20 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    private func setUpMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
+    }
+    
     private func checkLocationAuthorization() {
         switch locationManager.authorizationStatus {
             case .authorizedWhenInUse:
                 map.showsUserLocation = true
+                if incomeSegueIdentifier == "getAdress" { showUserLocation() }
                 break
             case .denied:
                 showAlertAsync(title: "Your Location is not awaileble",
@@ -109,6 +121,15 @@ class MapViewController: UIViewController {
         let alertCtrl = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertCtrl.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alertCtrl, animated: true)
+    }
+    
+    private func showUserLocation() {
+        if let locationCoordinate = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: locationCoordinate,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            map.setRegion(region, animated: true)
+        }
     }
 }
 
