@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        adressLabel.text = ""
         map.delegate = self
         setUpMapView()
         checkLocationServices()
@@ -129,6 +130,40 @@ class MapViewController: UIViewController {
                                             latitudinalMeters: regionInMeters,
                                             longitudinalMeters: regionInMeters)
             map.setRegion(region, animated: true)
+        }
+    }
+    
+    private func getCenterLocation(for map: MKMapView) -> CLLocation {
+        let latitude = map.centerCoordinate.latitude
+        let longitude = map.centerCoordinate.longitude
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let centerLocation = getCenterLocation(for: map)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(centerLocation) { [weak self] (placemarks, error) in
+            guard let self = self else { return }
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+            let street = placemark?.thoroughfare
+            let build = placemark?.subThoroughfare
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                if street != nil && build != nil {
+                    self.adressLabel.text = "\(street!), \(build!)"
+                } else if street != nil {
+                    self.adressLabel.text = "\(street!)"
+                } else {
+                    self.adressLabel.text = ""
+                }
+            }
         }
     }
 }
