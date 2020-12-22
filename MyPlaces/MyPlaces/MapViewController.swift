@@ -9,9 +9,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+    func getAddress(_ address: String?)
+}
+
 class MapViewController: UIViewController {
 
     let place = Place()
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 5_000.00
@@ -19,12 +24,12 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var mapPinImage: UIImageView!
-    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        adressLabel.text = ""
+        addressLabel.text = ""
         map.delegate = self
         setUpMapView()
         checkLocationServices()
@@ -35,6 +40,8 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        mapViewControllerDelegate?.getAddress(addressLabel.text)
+        dismiss(animated: true)
     }
     
     @IBAction func centerViewInUserLocation() {
@@ -61,7 +68,7 @@ class MapViewController: UIViewController {
         if incomeSegueIdentifier == "showPlace" {
             setupPlacemark()
             mapPinImage.isHidden = true
-            adressLabel.isHidden = true
+            addressLabel.isHidden = true
             doneButton.isHidden = true
         }
     }
@@ -70,7 +77,7 @@ class MapViewController: UIViewController {
         switch locationManager.authorizationStatus {
             case .authorizedWhenInUse:
                 map.showsUserLocation = true
-                if incomeSegueIdentifier == "getAdress" { showUserLocation() }
+                if incomeSegueIdentifier == "getAddress" { showUserLocation() }
                 break
             case .denied:
                 showAlertAsync(title: "Your Location is not awaileble",
@@ -157,11 +164,11 @@ class MapViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 if street != nil && build != nil {
-                    self.adressLabel.text = "\(street!), \(build!)"
+                    self.addressLabel.text = "\(street!), \(build!)"
                 } else if street != nil {
-                    self.adressLabel.text = "\(street!)"
+                    self.addressLabel.text = "\(street!)"
                 } else {
-                    self.adressLabel.text = ""
+                    self.addressLabel.text = ""
                 }
             }
         }

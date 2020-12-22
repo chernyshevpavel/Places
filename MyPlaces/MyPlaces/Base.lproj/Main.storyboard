@@ -120,7 +120,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="VsT-xO-ZcA" kind="presentation" identifier="getAdress" id="UGe-Bn-GJu"/>
+                                                        <segue destination="VsT-xO-ZcA" kind="presentation" identifier="getAddress" id="UGe-Bn-GJu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -306,7 +306,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="bf1-Nu-tld" id="UV2-1T-Pvm"/>
+                        <outlet property="addressLabel" destination="bf1-Nu-tld" id="UV2-1T-Pvm"/>
                         <outlet property="doneButton" destination="gKH-S6-gPi" id="Frs-dQ-Uwv"/>
                         <outlet property="map" destination="yI6-ok-jEG" id="ZDW-IO-Vco"/>
                         <outlet property="mapPinImage" destination="wrV-ZS-JCP" id="MAS-gl-N5I"/>
