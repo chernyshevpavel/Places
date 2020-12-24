@@ -284,17 +284,30 @@
                                     <action selector="doneButtonPressed" destination="VsT-xO-ZcA" eventType="touchUpInside" id="r5A-zY-7JX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v1-ox-aP6">
+                                <rect key="frame" x="187" y="782" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="e1L-ZJ-EL3"/>
+                                    <constraint firstAttribute="height" constant="40" id="zoM-gI-XiH"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="VsT-xO-ZcA" eventType="touchUpInside" id="M7I-ZY-XVR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6d4-5V-NTB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yI6-ok-jEG" secondAttribute="bottom" id="Gsu-V5-JX6"/>
+                            <constraint firstItem="2v1-ox-aP6" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="KLa-HZ-zm1"/>
                             <constraint firstItem="bf1-Nu-tld" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" constant="16" id="McL-T9-K1Z"/>
                             <constraint firstItem="gKH-S6-gPi" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="QHx-VP-jvh"/>
                             <constraint firstItem="wrV-ZS-JCP" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="SMJ-eM-WuN"/>
                             <constraint firstItem="LLP-xz-KxH" firstAttribute="top" secondItem="6d4-5V-NTB" secondAttribute="top" constant="40" id="Xyc-Da-MFg"/>
                             <constraint firstItem="6ci-f1-4rh" firstAttribute="centerY" secondItem="gKH-S6-gPi" secondAttribute="centerY" id="YEc-x8-31C"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="trailing" secondItem="6d4-5V-NTB" secondAttribute="trailing" id="Zod-wp-Mda"/>
+                            <constraint firstItem="6d4-5V-NTB" firstAttribute="bottom" secondItem="2v1-ox-aP6" secondAttribute="bottom" constant="40" id="dOE-SL-kMe"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" id="fhk-Rx-TDn"/>
                             <constraint firstItem="6d4-5V-NTB" firstAttribute="trailing" secondItem="LLP-xz-KxH" secondAttribute="trailing" constant="40" id="gCl-lf-6se"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="lai-TC-Zj9" secondAttribute="top" id="hdr-Bq-2Ts"/>
@@ -308,6 +321,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="bf1-Nu-tld" id="UV2-1T-Pvm"/>
                         <outlet property="doneButton" destination="gKH-S6-gPi" id="Frs-dQ-Uwv"/>
+                        <outlet property="goButton" destination="2v1-ox-aP6" id="ofo-un-O7B"/>
                         <outlet property="map" destination="yI6-ok-jEG" id="ZDW-IO-Vco"/>
                         <outlet property="mapPinImage" destination="wrV-ZS-JCP" id="MAS-gl-N5I"/>
                     </connections>
@@ -509,6 +523,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo.png" width="390" height="392"/>
         <image name="Pin" width="42" height="42"/>
         <image name="Placeholder" width="22" height="22"/>

@@ -21,11 +21,13 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters = 5_000.00
     var incomeSegueIdentifier = ""
+    var placeCoordinate: CLLocationCoordinate2D?
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var mapPinImage: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var goButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,10 @@ class MapViewController: UIViewController {
         showUserLocation()
     }
     
+    @IBAction func goButtonPressed(_ sender: Any) {
+        
+    }
+    
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             setUpLocationManager()
@@ -65,11 +71,13 @@ class MapViewController: UIViewController {
     }
     
     private func setUpMapView() {
+        goButton.isHidden = true
         if incomeSegueIdentifier == "showPlace" {
             setupPlacemark()
             mapPinImage.isHidden = true
             addressLabel.isHidden = true
             doneButton.isHidden = true
+            goButton.isHidden = false
         }
     }
     
@@ -114,6 +122,7 @@ class MapViewController: UIViewController {
             annotation.title = self.place.name
             annotation.subtitle = self.place.type
             annotation.coordinate = placemarkLocation.coordinate
+            self.placeCoordinate = placemarkLocation.coordinate
             self.map.showAnnotations([annotation], animated: true)
             self.map.selectAnnotation(annotation, animated: true)
         }
@@ -172,6 +181,38 @@ class MapViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func getDirections()
+    {
+        guard let location = locationManager.location?.coordinate else {
+            showAlert(title: "Error", message: "Current location is not found");
+            return;
+        }
+        
+        guard let request = createDirectionRequest(from: location) else {
+            showAlert(title: "Error", message: "Destination location is not found")
+            return
+        }
+        
+        
+    }
+    
+    private func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
+        guard let destinationCoordinate = placeCoordinate else {
+            return nil
+        }
+        
+        let startPlacemark = MKPlacemark(coordinate: coordinate)
+        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startPlacemark)
+        request.destination = MKMapItem(placemark: destinationPlacemark)
+        request.transportType = .automobile
+        request.requestsAlternateRoutes = true
+        
+        return request
     }
 }
 
