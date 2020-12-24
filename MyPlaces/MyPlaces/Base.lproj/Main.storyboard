@@ -295,13 +295,21 @@
                                     <action selector="goButtonPressed:" destination="VsT-xO-ZcA" eventType="touchUpInside" id="M7I-ZY-XVR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance and time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-o8-z82">
+                                <rect key="frame" x="16" y="178" width="378" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6d4-5V-NTB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6d4-5V-NTB" firstAttribute="trailing" secondItem="gUd-o8-z82" secondAttribute="trailing" constant="20" id="6pT-kN-yyN"/>
                             <constraint firstAttribute="bottom" secondItem="yI6-ok-jEG" secondAttribute="bottom" id="Gsu-V5-JX6"/>
                             <constraint firstItem="2v1-ox-aP6" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="KLa-HZ-zm1"/>
                             <constraint firstItem="bf1-Nu-tld" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" constant="16" id="McL-T9-K1Z"/>
+                            <constraint firstItem="gUd-o8-z82" firstAttribute="leading" secondItem="6d4-5V-NTB" secondAttribute="leading" constant="16" id="OIn-es-ofK"/>
                             <constraint firstItem="gKH-S6-gPi" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="QHx-VP-jvh"/>
                             <constraint firstItem="wrV-ZS-JCP" firstAttribute="centerX" secondItem="lai-TC-Zj9" secondAttribute="centerX" id="SMJ-eM-WuN"/>
                             <constraint firstItem="LLP-xz-KxH" firstAttribute="top" secondItem="6d4-5V-NTB" secondAttribute="top" constant="40" id="Xyc-Da-MFg"/>
@@ -315,11 +323,13 @@
                             <constraint firstItem="6d4-5V-NTB" firstAttribute="trailing" secondItem="bf1-Nu-tld" secondAttribute="trailing" constant="16" id="k1L-uT-Q8K"/>
                             <constraint firstItem="6ci-f1-4rh" firstAttribute="trailing" secondItem="lai-TC-Zj9" secondAttribute="trailing" constant="-40" id="qM1-vA-rbT"/>
                             <constraint firstItem="6d4-5V-NTB" firstAttribute="bottom" secondItem="gKH-S6-gPi" secondAttribute="bottom" constant="40" id="rmY-Jv-hba"/>
+                            <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="gUd-o8-z82" secondAttribute="bottom" constant="-210" id="tKr-bo-tGz"/>
                             <constraint firstItem="yI6-ok-jEG" firstAttribute="top" secondItem="bf1-Nu-tld" secondAttribute="bottom" constant="-250" id="zCP-G0-KTH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="bf1-Nu-tld" id="UV2-1T-Pvm"/>
+                        <outlet property="distanceLabel" destination="gUd-o8-z82" id="5SB-b4-TCJ"/>
                         <outlet property="doneButton" destination="gKH-S6-gPi" id="Frs-dQ-Uwv"/>
                         <outlet property="goButton" destination="2v1-ox-aP6" id="ofo-un-O7B"/>
                         <outlet property="map" destination="yI6-ok-jEG" id="ZDW-IO-Vco"/>
@@ -328,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vj7-Qt-ct7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="-38"/>
+            <point key="canvasLocation" x="1705.7971014492755" y="-38.169642857142854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cL0-1l-Hs1">

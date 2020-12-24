@@ -28,6 +28,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +53,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
-        
+        getDirections()
     }
     
     private func checkLocationServices() {
@@ -72,6 +74,7 @@ class MapViewController: UIViewController {
     
     private func setUpMapView() {
         goButton.isHidden = true
+        distanceLabel.isHidden = true
         if incomeSegueIdentifier == "showPlace" {
             setupPlacemark()
             mapPinImage.isHidden = true
@@ -195,7 +198,31 @@ class MapViewController: UIViewController {
             return
         }
         
+        let directions = MKDirections(request: request)
         
+        directions.calculate { [weak self] (responce, error) in
+            guard let self = self else { return }
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let responce = responce else {
+                self.showAlert(title: "Error", message: "Directions is not awailable")
+                return
+            }
+            
+            for route in responce.routes {
+                self.map.addOverlay(route.polyline)
+                self.map.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+                let distance = String(format: "%.1f", route.distance / 1000)
+                let timeInterval = Int(route.expectedTravelTime / 60)
+                
+                self.distanceLabel.text = "\(distance) km / \(timeInterval) min"
+                self.distanceLabel.isHidden = false
+            }
+        }
     }
     
     private func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
@@ -213,6 +240,12 @@ class MapViewController: UIViewController {
         request.requestsAlternateRoutes = true
         
         return request
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline )
+        renderer.strokeColor = .blue
+        return renderer
     }
 }
 
