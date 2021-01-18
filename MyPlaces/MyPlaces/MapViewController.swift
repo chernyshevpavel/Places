@@ -193,7 +193,7 @@ class MapViewController: UIViewController {
             return;
         }
         
-        guard let request = createDirectionRequest(from: location) else {
+        guard let request = createDirectionsRequest(from: location) else {
             showAlert(title: "Error", message: "Destination location is not found")
             return
         }
@@ -225,7 +225,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    private func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
+    private func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = placeCoordinate else {
             return nil
         }
